@@ -1,7 +1,15 @@
 (function() {
     function SongPlayer() {
+        /**
+         * @desc Creates the actual SongPlayer Object to attach the subsequent methods
+         * @type {Object}
+         */
         var SongPlayer = {};
 
+        /**
+         * @desc Current song object
+         * @type {Object}
+         */
         var currentSong = null;
 
         /**
@@ -9,6 +17,16 @@
          * @type {Object}
          */
         var currentBuzzObject = null;
+
+        /**
+         * @function PlaySong
+         * @desc Plays the current Buzz object and sets the playing attribute to true
+         * @param {Object} song 
+         */
+        var playSong = function(song) {
+            song.playing = true;
+            currentBuzzObject.play();
+        };
 
         /**
          * @function setSong
@@ -29,20 +47,28 @@
             currentSong = song;
         };
 
+        /**
+         * @function play
+         * @desc Play logic for the song player
+         * @param {Object} song
+         */
         SongPlayer.play = function(song) {
             if (currentSong !== song) {
                 setSong(song);
-                song.playing = true;
-                currentBuzzObject.play();
+                playSong(song);
 
             } else if (currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
-                    currentBuzzObject.play();
-                    song.playing = true;
+                    playSong(song);
                 }
             }
         };
 
+        /**
+         * @function pause
+         * @desc Pause logic for the song player
+         * @param {Object} song
+         */
         SongPlayer.pause = function(song) {
             currentBuzzObject.pause();
             song.playing = false;
