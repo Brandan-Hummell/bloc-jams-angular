@@ -7,17 +7,8 @@
                 return '-:--'
             }
 
-            var wholeSeconds = Math.floor(seconds);
-            var minutes = Math.floor(wholeSeconds / 60);
-            var remainingSeconds = wholeSeconds % 60;
+            output = buzz.toTimer(seconds);
 
-            var output = minutes + ':';
-
-            if (remainingSeconds < 10) {
-                output += '0';
-            }
-
-            output += remainingSeconds;
             return output;
         };
     }
