@@ -27,7 +27,7 @@ $ git pull origin master
 
 #### Configuration
 
-The project uses Node to run a JS server in development. This will be important when we want to use urls /album or /collection instead of the basic album.html or collection.html.
+The project uses Node to run a JS server in development.
 
 Install the project dependencies by running:
 
