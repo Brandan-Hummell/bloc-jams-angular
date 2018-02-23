@@ -1,43 +1,33 @@
-## Bloc Frontend Project Starter
+# README
+# BlocJams
 
-A starter application for student projects in Bloc's [Frontend Web Development Course](https://www.bloc.io/frontend-development-bootcamp).
+BlocJams is a JavaScript based music player application. All of the image assets were made by Bloc (see below for offical acknowledgment), but I am responsible for coding and testing the music player functionality. 
 
-## Pull Down the Code
+There are two versions on my GitHub. This version is built primarily using the AngularJS framework. 
 
-Start by cloning the repository:
+This particular application does not have a way to import and save music to a data base - the provided music serves as a way to test functionality. BlocJams uses the Buzz! library as a lightweight song management solution. 
 
-```
-$ git clone https://github.com/Bloc/bloc-frontend-project-starter.git <your-frontend-project-name>
-```
+One of the greatest challenges in this project was the music player bar. The song seek functionality and filling the seek bar to match the progress in the song were especially fantastic learning experiences.
 
-## Reset Git
+## Getting Started
 
-This will be your personal project. So all of the past commit history that we used to build this starter app aren't needed. Also you will want to be able to push/pull code from your personal remote (Github) repository and NOT Bloc's remote (Github) repository.
+These instructions will help you set up BlocJams on your local machine for development and testing purposes. 
 
-Remove the existing local Git repository:
+### Prerequisites & Installation
 
-```
-$ rm -r -f .git
-```
+#### Pull Down the Code
 
-Initialize a new Git repository, add all of these existing files, and commit them:
+Start by pulling the repository:
 
 ```
-$ git init
-$ git add .
-$ git commit -m "initial commit"
+$ git add remote origin https://github.com/Brandan-Hummell/bloc-jams-angular.git
+$ git pull 
+$ git pull origin master
 ```
 
-Go to Github and create a new repository. Add that new repository as the proper remote. Then push your initial commit.
+#### Configuration
 
-```
-$ git remote add origin <URL TO NEW GITHUB REPO>
-$ git push origin master
-```
-
-## Configuration
-
-The project uses Node to run a JS server in development. This will be important when we want to use urls /album or /collection instead of the basic album.html or collection.html. It may  help to review [our resource on NPM and `package.json` files](https://www.bloc.io/resources/npm-and-package-json).
+The project uses Node to run a JS server in development. This will be important when we want to use urls /album or /collection instead of the basic album.html or collection.html.
 
 Install the project dependencies by running:
 
@@ -45,7 +35,7 @@ Install the project dependencies by running:
 $ npm install
 ```
 
-## Run the Application
+#### Run the Application
 
 Run the application server:
 
@@ -55,53 +45,21 @@ $ npm start
 
 The server will start up. To stop the server, press `cntrl + c`.
 
+## Built With
 
-## Use in Brackets Live Preview
+* [AngularJS](https://angularjs.org/) - JavaScript Framework
+* [Node.js](https://nodejs.org/en/)   - JavaScript Runtime
+* [Buzz!](http://buzz.jaysalvat.com/) - Audio Management Library
 
-To use the application with the Live Preview functionality of the Brackets text editor, go to __File > Project Settings__ and add `http://localhost:3000` to the Base URL field.
+## Authors
 
-![Screenshot of project settings URL in Brackets](https://bloc-global-assets.s3.amazonaws.com/images-frontend/screenshots/bloc-frontend-project-starter/live_preview_project_settings.png)
+* **Brandan Hummell** Front-End Developer - [GitHub](https://github.com/Brandan-Hummell)
 
-The text in the application will not update on every keystroke, but changes will automatically push when you save the file.
+* **Bloc** Checkpoint Coordinator - [GitHub](https://github.com/Bloc/)  
 
-## Directory Structure
+See also the list of [contributors](https://github.com/Brandan-Hummell/bloc-jams/graphs/contributors) who participated in this project.
 
-```
-├── LICENSE
-├── README.md
-├── app
-│   ├── assets
-│   │   └── images
-│   │       └── bloc-logo-white.png
-│   ├── pages
-│   │   └── index.html
-│   ├── scripts
-│   │   └── app.js
-│   ├── styles
-│   │   └── style.css
-│   └── templates
-│       └── home.html
-├── package.json
-└── server.js
-```
+## Acknowledgments
 
+* [Bloc](https://github.com/Bloc/) - Provided image assets, user stores, and layout goals
 
-### Assets/Images
-
-Add images to the `app/assets/images` directory. To reference images in HTML, use the path `/assets/images/<image file name>.jpg`. For example, to include the image called `bloc-white-logo.png`, the path for the `src` attribute in the HTML would be:
-
-```html
-<img src="/assets/images/bloc-white-logo.png">
-```
-
-__Note:__ A sample image has been added to `app/images`. To remove the image from the application, run the following command from the root of repo:
-
-```bash
-$ rm -f app/assets/images/bloc-white-logo.png
-```
-
-To reference any other assets, like the music in Bloc Jams, use the path `assets/<asset-type>/<asset-file-name>`.
-
-### Difference between Pages and Templates
-
-The `templates` directory should hold any HTML files used as templates in Angular states configured by UI Router. All other HTML files belong in the `pages` directory.
